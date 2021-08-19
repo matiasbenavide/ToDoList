@@ -9,7 +9,7 @@ const ListaItem = (props) => {
     const { itemList } = props
     return(
         <View>
-            {itemList.map(item => <View style={styles.itemList}><Text>{item.value}</Text></View>)}
+            {itemList.map((item, i) => <View style={styles.itemList} key={i}><Text>{item.value}</Text></View>)}
         </View>
     )
 };

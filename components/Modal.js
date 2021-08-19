@@ -22,26 +22,33 @@ const ModalItem = (props) => {
         animationType="slide"
         visible={visible}
       >
-        <View style={styles.modalTitle}>
-          <Text>Mi Modal</Text>
-        </View>
-        <View style={styles.modalMessage}>
-          <Text>¿Está seguro que desea borrar?</Text>
-        </View>
-        <View style={styles.modalMessage}>
-          <Text style={styles.modalItem}>{item.value}</Text>
-        </View>
-        <View style={styles.modalButton}>
-          <Button 
-              onPress = { onDelete }
-              title = "CONFIRM"
-          />
+        <View style={styles.container}>
+          <View style={styles.modalTitle}>
+            <Text>Mi Modal</Text>
+          </View>
+          <View style={styles.modalMessage}>
+            <Text>¿Está seguro que desea borrar?</Text>
+          </View>
+          <View style={styles.modalMessage}>
+            <Text style={styles.modalItem}>{item.value}</Text>
+          </View>
+          <View style={styles.modalButton}>
+            <Button 
+                onPress = { onDelete }
+                title = "CONFIRM"
+            />
+          </View>
         </View>
       </Modal>
     )
 }
 
 const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
     modalTitle: {
         backgroundColor: '#ccc',
         color: 'white',
